@@ -823,9 +823,6 @@ Store.prototype.recentAssets = function (type, count, options) {
      }); */
     length = recent.length;
     for (i = 0; i < length; i++) {
-        recent[i].rating = this.rating(recent[i].path).average;
-        recent[i].indashboard = this.isuserasset(recent[i].id, type);
-
         if (recentReturn.length == 0) {
             recentReturn = recent;
         }
@@ -874,7 +871,6 @@ Store.prototype.search = function (options, paging) {
     if (type) {
         var assetz = this.assetManager(type).search(options, builtPaging);
         for (i = 0; i < assetz.length; i++) {
-            assetz[i].indashboard = this.isuserasset(assetz[i].id, type);
             if (assetz[i].attributes.overview_description.indexOf(']') > -1 &&
                 assetz[i].attributes.overview_description.split(']')[0] == "sample") {
                 assetz[i].updatedAcsUrl = "?tenantDomain=" + tenantdomain;

@@ -72,11 +72,11 @@ var modelManager = function () {
 
         var temp = new model();
 
-        //Check if the table exists before creating
-        if (!temp.checkIfTableExists()) {
-            //Create the table
-            temp.createTable();
-        }
+//        //Check if the table exists before creating
+//        if (!temp.checkIfTableExists()) {
+//            //Create the table
+//            temp.createTable();
+//        }
 
         //Add the model to the list of managed models
         this.managedModels[schema.name] = model;
